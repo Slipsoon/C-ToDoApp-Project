@@ -9,23 +9,41 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="428*"/>
-            <RowDefinition Height="43*"/>
+            <RowDefinition Height="440"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        
-        
+
         <Grid x:Name="GridTopBar" Background="#FF14B9EB" MouseDown="GridTopBar_MouseDown">
+            <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="ToDo" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="14" Background="{x:Null}" Foreground="#FFFCA503"/>
+
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
                 <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503">
                     <materialDesign:PackIcon Kind="Add"/>
                 </Button>
-                <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503">
+                <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503" Click="ButtonMinimize_Click">
                     <materialDesign:PackIcon Kind="WindowMinimize"/>
                 </Button>
                 <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503" Click="ButtonExit_Click">
                     <materialDesign:PackIcon Kind="Power"/>
                 </Button>
             </StackPanel>
+        </Grid>
+
+        <Grid x:Name="GridTaskList" Grid.Row="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\waterfall-bg.jpeg" Stretch="UniformToFill"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid x:Name="GridBottomBar" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="TextTask" FontSize="18" Background="Bisque"/>
+            <Button x:Name="ButtonAddTask" Grid.Column="1" Content="Add Task" Background="#FF14B9EB" Foreground="Bisque"/>
         </Grid>
     </Grid>
 </Window>
