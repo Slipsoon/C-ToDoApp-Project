@@ -21,7 +21,7 @@
                 <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503">
                     <materialDesign:PackIcon Kind="add"/>
                 </Button>
-                <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503">
+                <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503" Click="ButtonMinimize_Click">
                     <materialDesign:PackIcon Kind="WindowMinimize"/>
                 </Button>
                 <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503" Click="ButtonExit_Click">
