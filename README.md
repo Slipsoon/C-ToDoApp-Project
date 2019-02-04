@@ -2,5 +2,6 @@
 Projekt semestralny z przedmiotu C# Lab
 
 Whats Included:
-- @Alpha Design
-- @Tray Mimimize system
+- Design
+- Tray mimimize feature
+- Task system functionality
