@@ -21,6 +21,7 @@
                 <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503">
                     <materialDesign:PackIcon Kind="add"/>
                 </Button>
+
                 <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503" Click="ButtonMinimize_Click">
                     <materialDesign:PackIcon Kind="WindowMinimize"/>
                 </Button>
@@ -34,6 +35,29 @@
             <Grid.Background>
                 <ImageBrush ImageSource="Images\waterfall-bg.jpeg" Stretch="UniformToFill"/>
             </Grid.Background>
+
+            <ItemsControl Grid.Row="1" x:Name="List" ItemsSource="{Binding Tasks}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Vertical">
+
+                        </VirtualizingStackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Name}" Foreground="Bisque" FontSize="14" />
+                            <CheckBox IsChecked="{Binding Checked}" Grid.Column="1" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </Grid>
 
         <Grid x:Name="GridBottomBar" Grid.Row="2">
@@ -42,8 +66,8 @@
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
 
-            <TextBox x:Name="TextTask" FontSize="18" Background="Bisque"/>
-            <Button x:Name="ButtonAddTask" Grid.Column="1" Content="Add Task" Background="#FF14B9EB" Foreground="Bisque"/>
+            <TextBox x:Name="TextTask" Text="{Binding TaskName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Background="Bisque"/>
+            <Button x:Name="ButtonAddTask" Command="{Binding CreateTaskCommand}" CommandParameter="{Binding}" Grid.Column="1" Content="Add Task" Background="#FF14B9EB" Foreground="Bisque"/>
         </Grid>
     </Grid>
 </Window>

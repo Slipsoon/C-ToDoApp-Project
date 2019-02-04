@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToDo.ViewModel;
 
 namespace ToDo
 {
@@ -23,6 +24,10 @@ namespace ToDo
         public MainWindow()
         {
             InitializeComponent();
+            var tasks = new TaskListViewModel();
+            this.DataContext = tasks;
+
+            
         }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
