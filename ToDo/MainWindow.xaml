@@ -17,6 +17,11 @@
             <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="ToDo" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="14" Background="{x:Null}" Foreground="#FFFCA503"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503">
+                    <materialDesign:PackIcon Kind="add"/>
+                </Button>
+
                 <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFCA503" Click="ButtonMinimize_Click">
                     <materialDesign:PackIcon Kind="WindowMinimize"/>
                 </Button>
